@@ -22,14 +22,18 @@ body {
     align-items: center;
     gap: 50px;
     width: 100%;
+    padding: 0 20em;
 }
-
-.conteiner > *:first-child {
-    margin-right: auto;
+main.conteiner {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: calc(100% - 80px);
 }
 
 .logo {
     max-height: 40px;
+    margin-right: auto;
 }
 
 .menu {
@@ -45,23 +49,11 @@ body {
     text-decoration: underline;
 }
 
-.icons {
-    display: flex;
-    gap: 20px;
-}
-
-.icons > a {
-    color: black;
-    text-decoration: none;
-}
-
-.icons > a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
+.hamburger {
+    font-size: 2em;
 }
 
 .gallery {
-    width: 60%;
     padding: 0 0.7em;
     position: relative;
     font-size: 40px;
@@ -97,17 +89,32 @@ body {
 }
 
 .text {
-    width: 40%;
 }
+
 @media (min-width: 480px) {
     .conteiner {
-        width: 360px;
+        width: 460px;
     }
 }
 
 @media (min-width: 780px) {
     .conteiner {
         width: 660px;
+    }
+    .menu {
+        display: flex;
+    }
+    .hamburger {
+        display: none;
+    }
+    main.conteiner {
+        flex-direction: row;
+    }
+    .gallery {
+        width: 60%;
+    }
+    .text {
+        width: 40%;
     }
 }
 
