@@ -4,7 +4,7 @@
 
 :root {
     --primary-color: #ff5e61;
-    --sec-color: #fcc7d6;
+    --secondary-color: #fcc7d6;
 }
 
 body {
@@ -12,12 +12,12 @@ body {
     min-height: 100vh;
     flex-direction: column;
     gap: 30px;
-    padding: 72px 0 30px 0;
+    padding: 82px 0 30px 0;
     justify-content: flex-start;
     align-items: center;
 }
 
-.conteiner {
+.container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -26,13 +26,13 @@ body {
     padding: 20px;
     position: relative;
 }
-.header.conteiner {
+header.container {
     position: fixed;
-    top: 20px;
+    top: 0;
     z-index: 1;
-    background-color: white;
+    background-color: #fff;
 }
-main.conteiner {
+main.container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -57,28 +57,19 @@ main.conteiner {
     z-index: 1;
     transform: translateY(95%);
     text-align: center;
-    background-color: white;
-    box-shadow: 0 2px 4px -6px #0004;
+    background-color: #fff;
+    box-shadow: 0 6px 4px -6px #0004;
 }
-.main-menu > .menu {
-    flex-direction: row;
-}
-
 .menu-visible .main-menu {
     display: flex;
 }
-
 .menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.menu-visible .menu {
-    display: flex;
-}
-
 .menu > a {
-    color: black;
+    color: #000;
     text-decoration: none;
 }
 .menu > a:hover {
@@ -92,11 +83,13 @@ main.conteiner {
 
 .gallery {
     padding: 0 0.7em;
-    position: relative;
     font-size: 40px;
+    position: relative;
 }
-
-.gallery > img {
+.gallery > picture {
+    width: 100%;
+}
+.gallery > picture > img {
     width: 100%;
 }
 .gallery > .fa {
@@ -106,23 +99,18 @@ main.conteiner {
     width: 1.4em;
     height: 1.4em;
     line-height: 1.4em;
-    font-size: 40px;
     text-align: center;
-    color: white;
+    color: #fff;
     background-color: var(--primary-color);
     border-radius: 50%;
 }
-
 .gallery > .fa.fa-angle-left {
     left: 0;
     padding-right: 0.17em;
-    /*transform: translateX(-50%);*/
 }
-
 .gallery > .fa.fa-angle-right {
-    right: 0%;
+    right: 0;
     padding-left: 0.17em;
-    /*transform: translateX(50%);*/
 }
 
 .text {
@@ -141,12 +129,11 @@ main.conteiner {
     font-weight: 900;
     letter-spacing: -1px;
 }
-.text > .description {
-}
-text > .contains {
+.text > .contains {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 20px 50px;
 }
 .text > .contains > .list {
     display: flex;
@@ -160,10 +147,10 @@ text > .contains {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    list-style-type: none; /*nueme burbuliukus*/
+    list-style-type: none;
 }
 .text .list-plus > li {
-    line-height: 40px;
+    line-height: 20px;
 }
 .text .list-plus > li::before {
     content: '+';
@@ -174,6 +161,7 @@ text > .contains {
 }
 .text .list > .list-image {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     list-style-type: none;
 }
@@ -183,7 +171,7 @@ text > .contains {
     align-items: center;
     width: 70px;
     height: 70px;
-    background-color: var(--sec-color);
+    background-color: var(--secondary-color);
     border-radius: 50%;
 }
 .text .list-image img {
@@ -192,12 +180,10 @@ text > .contains {
     object-fit: contain;
     object-position: center;
 }
-.text > form {
-}
 .text > form > button {
     padding: 1em 3em;
     line-height: 1em;
-    color: white;
+    color: #fff;
     font-size: 16px;
     font-weight: bold;
     background-color: var(--primary-color);
@@ -207,22 +193,17 @@ text > .contains {
     cursor: pointer;
 }
 .text > form > button:hover {
-    color: white;
-    background-color: var(--primary-color);
     border-radius: 1.5em;
 }
 
 @media (min-width: 480px) {
-    .conteiner {
-        width: 460px;
-    }
-    .menu {
-        display: none;
+    .container {
+        width: 440px;
     }
 }
 
 @media (min-width: 780px) {
-    .conteiner {
+    .container {
         width: 660px;
     }
     .main-menu {
@@ -232,30 +213,35 @@ text > .contains {
         transform: translateY(0);
         box-shadow: none;
     }
+    .main-menu > .menu {
+        flex-direction: row;
+    }
     .hamburger {
         display: none;
     }
-    main.conteiner {
+
+    main.container {
         flex-direction: row;
     }
     .gallery {
-        width: 60%;
+        width: 55%;
     }
     .text {
-        width: 40%;
+        width: 45%;
     }
 }
 
 @media (min-width: 1000px) {
-    .conteiner {
+    .container {
         width: 900px;
     }
     .text > .contains {
         flex-direction: row;
     }
 }
+
 @media (min-width: 1200px) {
-    .conteiner {
+    .container {
         width: 1100px;
     }
 }

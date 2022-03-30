@@ -5,14 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoothies</title>
     <link rel="stylesheet" href="./css/main.css">
-
-    <title>Strawberry</title>
 </head>
 
 <body>
-    <header class="conteiner">
-        <!-- <head class="conteiner"> -->
+    <header class="container">
         <img src="./img/logo.png" alt="Logo" class="logo">
         <div class="main-menu">
             <nav class="menu">
@@ -27,16 +25,20 @@
         </div>
         <i class="fa fa-bars hamburger"></i>
     </header>
-    <main class="conteiner">
+    <main class="container">
         <div class="gallery">
-            <img src="./img/drink.png" alt="Drink">
+            <picture>
+                <source media="(max-width: 799px)" srcset="./img/drink-mobile.png">
+                <source media="(min-width: 800px)" srcset="./img/drink.png">
+                <img src="./img/drink.png" alt="Drink">
+            </picture>
             <i class="fa fa-angle-left"></i>
             <i class="fa fa-angle-right"></i>
         </div>
         <div class="text">
             <p class="category">Berries</p>
             <h1 class="title">Strawberry rush</h1>
-            <p class="desctiption">The best blend of Strawberries, rasberrie and mulberries</p>
+            <p class="description">The best blend of Strawberries, rasberries and mulberries.</p>
             <div class="contains">
                 <div class="list">
                     <h2 class="list-title">Nutrition benefits:</h2>
@@ -47,16 +49,16 @@
                     </ul>
                 </div>
                 <div class="list">
-                    <h2 class="list-title"> Content:</h2>
+                    <h2 class="list-title">Content:</h2>
                     <ul class="list-image">
                         <li>
-                            <img src="./img/braske.png" alt="">
+                            <img src="./img/braske.png" alt="Strawberries">
                         </li>
                         <li>
-                            <img src="./img/aviete.png" alt="">
+                            <img src="./img/aviete.png" alt="Rasberries">
                         </li>
                         <li>
-                            <img src="./img/gervuoge.png" alt="">
+                            <img src="./img/gervuoge.png" alt="Mulberries">
                         </li>
                     </ul>
                 </div>
@@ -67,6 +69,7 @@
             </form>
         </div>
     </main>
+
     <script src="./js/main.js" defer></script>
 </body>
 
